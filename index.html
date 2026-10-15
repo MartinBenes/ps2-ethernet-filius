@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pracovní list k Ethernetu I: navrhněte a pozorujte vlastní síť ve Filiu.">
+  <meta name="referrer" content="no-referrer">
+  <title>Ethernet I · Navrhněte vlastní síť</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Přejít na pracovní list</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Přehled pracovního listu">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">E</span><div><span class="eyebrow">Počítačové sítě II</span>Ethernet I</div></div>
+      <nav class="step-nav" aria-label="Úlohy">
+        <button class="step-link" type="button" data-go="1" aria-controls="uloha-1" aria-current="step"><span class="step-index">01</span><span class="step-title">Malá laboratoř</span><span class="step-caption">Návrh, adresy a první rámce</span><span class="step-state" aria-hidden="true"></span></button>
+        <button class="step-link" type="button" data-go="2" aria-controls="uloha-2"><span class="step-index">02</span><span class="step-title">Druhá místnost</span><span class="step-caption">Rozšíření vaší sítě</span><span class="step-state" aria-hidden="true"></span></button>
+        <button class="step-link" type="button" data-go="3" aria-controls="uloha-3"><span class="step-index">03</span><span class="step-title">Router · bonus</span><span class="step-caption">Dvě sítě, jedno spojení</span><span class="step-state" aria-hidden="true"></span></button>
+      </nav>
+      <div class="progress-block">
+        <p><strong>Váš postup</strong></p>
+        <div class="progress-track" role="progressbar" aria-label="Dokončené kroky základních úloh" aria-valuemin="0" aria-valuemax="9" aria-valuenow="0"><div class="progress-fill"></div></div>
+        <p data-progress-text>0 z 9 kroků základu</p>
+        <p>Zaškrtnutí je váš přehled,<br>ne hodnocení správnosti.</p>
+      </div>
+    </aside>
+
+    <main class="workspace" id="main" tabindex="-1">
+      <header class="topbar"><span class="mobile-brand">Ethernet I</span><span class="course-label">Počítačové sítě II / Lekce 2</span><span class="session-note">Pracovní list pro dvojici</span></header>
+      <div class="page-intro">
+        <p class="kicker">Laboratoř ve Filiu</p>
+        <h1>Navrhněte vlastní síť.</h1>
+        <p class="lead">Začněte prázdným projektem. Topologii i adresaci navrhujete vy. Jeden z dvojice ovládá Filius, druhý kontroluje a zapisuje. Po první úloze si role vyměňte.</p>
+        <div class="lesson-meta"><span class="meta-pill">01 · 30 minut</span><span class="meta-pill">02 · 20 minut</span><span class="meta-pill">03 · volitelný bonus</span></div>
+        <div class="notice"><span class="notice-icon" aria-hidden="true">ⓘ</span><p>Pište sem jako na papír. Odpovědi se nikam neodesílají ani neukládají. Při přepínání úloh zůstanou vyplněné; po obnovení nebo zavření stránky zmizí.</p></div>
+      </div>
+
+      <noscript><div class="notice">Pro přepínání úloh a vyplňování zapněte JavaScript v prohlížeči.</div></noscript>
+      <form id="worksheet" autocomplete="off">
+        <section class="paper-section" id="uloha-1" data-step="1" aria-labelledby="title-1">
+          <div class="section-heading"><span class="section-number" aria-hidden="true">1</span><h2 class="section-title" id="title-1" tabindex="-1">Malá laboratoř</h2><span class="duration">30 minut</span></div>
+          <p class="section-lead">Nejdřív si rozmyslete síť. Teprve potom ji sestavte a zjistěte, co v ní skutečně putuje.</p>
+          <div class="brief"><p>V laboratoři jsou <strong>tři pracovní stanice A, B a C</strong>. Každá má jediný ethernetový port. Všechny spolu mají komunikovat v jedné lokální síti; přístup do jiných sítí se nepožaduje.</p><p>Navrhněte propojení s <strong>co nejmenším počtem síťových prvků</strong>. Použijte síť <strong>192.168.10.0/24</strong> a ruční nastavení adres. Každé stanici zvolte vlastní použitelnou IP adresu.</p></div>
+
+          <h3>Nejdřív návrh</h3>
+          <div class="question-block"><label for="topology-1">Jaká zařízení zvolíte a jak je propojíte?</label><textarea id="topology-1" placeholder="Popište svůj návrh; schéma sestavíte ve Filiu." spellcheck="false"></textarea></div>
+          <p class="section-lead">Doplňte adresní plán. Prefix /24 převeďte na desetinnou masku a sami rozhodněte, zda stanice potřebují výchozí bránu. Řádek D využijete ve druhé úloze.</p>
+          <div class="table-wrap" role="region" aria-label="Adresní plán stanic" tabindex="0">
+            <table><caption class="sr-only">Váš adresní plán pro první a druhou úlohu</caption><thead><tr><th scope="col">Stanice</th><th scope="col">Zvolená IP</th><th scope="col">Maska</th><th scope="col">Výchozí brána / není třeba</th></tr></thead><tbody>
+              <tr><th scope="row">A</th><td><input id="ip-a" type="text" aria-label="IP adresa A" spellcheck="false"></td><td><input type="text" aria-label="Maska A" spellcheck="false"></td><td><input type="text" aria-label="Výchozí brána A nebo není třeba" spellcheck="false"></td></tr>
+              <tr><th scope="row">B</th><td><input type="text" aria-label="IP adresa B" spellcheck="false"></td><td><input type="text" aria-label="Maska B" spellcheck="false"></td><td><input type="text" aria-label="Výchozí brána B nebo není třeba" spellcheck="false"></td></tr>
+              <tr><th scope="row">C</th><td><input type="text" aria-label="IP adresa C" spellcheck="false"></td><td><input type="text" aria-label="Maska C" spellcheck="false"></td><td><input type="text" aria-label="Výchozí brána C nebo není třeba" spellcheck="false"></td></tr>
+              <tr><th scope="row">D <small>(úloha 2)</small></th><td><input id="ip-d" type="text" aria-label="IP adresa D pro druhou úlohu" spellcheck="false"></td><td><input type="text" aria-label="Maska D" spellcheck="false"></td><td><input type="text" aria-label="Výchozí brána D nebo není třeba" spellcheck="false"></td></tr>
+            </tbody></table>
+          </div>
+          <ul class="task-list"><li class="task-item"><input type="checkbox" id="check-plan" data-core><label class="task-copy" for="check-plan"><strong>Máme návrh a adresní plán pro A, B a C.</strong></label></li></ul>
+
+          <div class="subsection"><h3>Postavte a nastavte síť <small>· asi 15 minut včetně návrhu</small></h3>
+            <ul class="task-list">
+              <li class="task-item"><input type="checkbox" id="check-build" data-core><label class="task-copy" for="check-build"><strong>Síť je sestavená a stanice mají jména i adresy.</strong><p>Vložte zvolená zařízení, propojte kabely a nastavte adresy podle svého plánu.</p></label></li>
+              <li class="task-item"><input type="checkbox" id="check-console" data-core><label class="task-copy" for="check-console"><strong>Na všech třech stanicích máme Command Line.</strong><p>Přepněte do simulace a nainstalujte ji. Svůj projekt sítě uložte ve Filiu jako soubor .fls.</p></label></li>
+            </ul>
+            <details class="help"><summary>Nápověda: stavba a ovládání Filiu</summary><div class="help-content"><ol><li><strong>Kladívko</strong> přepíná do návrhu. Zařízení přetáhněte z levého panelu na plochu.</li><li>Pro kabel vyberte <strong>Connection</strong> a klikněte na oba konce spojení.</li><li>Dvojklik na stanici otevře její nastavení: jméno, IP, masku a bránu.</li><li><strong>Zelená šipka</strong> spouští simulaci. Klikněte na PC → <strong>Software Installation</strong> → nainstalujte <strong>Command Line</strong>.</li></ol></div></details>
+          </div>
+
+          <div class="subsection"><h3>Předpovězte a ověřte <small>· asi 15 minut</small></h3>
+            <p class="section-lead">Otevřete tabulku přepínače SAT a na A zadejte <code>arp</code>. Ještě před prvním pingem vyplňte předpověď.</p>
+            <div class="question-block"><label for="prediction-1">Kam se podle vás dostane první ARP request z A, když chce A poslat data C? Proč?</label><textarea id="prediction-1" placeholder="Nejdřív předpověď, potom pokus."></textarea></div>
+            <div class="inline-command"><span>Na stanici A:</span><code>ping IP_C</code><span>IP_C nahraďte svou adresou C.</span></div>
+            <p class="section-lead">V <strong>Show data exchange</strong> rozlište ARP request, ARP reply a ICMP. Potom ping A → C hned zopakujte. Nakonec spusťte ping B → C a zkontrolujte novou položku SAT.</p>
+            <details class="help"><summary>Nápověda: kde pozorovat provoz a jak opakovat pokus</summary><div class="help-content"><ul><li>V simulaci klikněte na přepínač a otevřete jeho <strong>SAT</strong>.</li><li>Pravý klik na PC → <strong>Show data exchange</strong>. Vyberte záznam a prohlédněte jeho obsah.</li><li><code>arp</code> v Command Line vypíše tabulku ARP dané stanice.</li><li>Pro nový pokus přepněte <strong>kladívko → zelená šipka</strong>. ARP může obsahovat výchozí broadcastový záznam.</li></ul></div></details>
+            <div class="observation-grid">
+              <div class="question-block"><label for="first-ping">Co jste viděli při prvním pingu A → C?</label><textarea id="first-ping" placeholder="Pořadí zpráv, jejich adresáti, výsledek…"></textarea></div>
+              <div class="question-block"><label for="repeat-ping">Co při okamžitém opakování zmizelo? Jak to vysvětlíte?</label><textarea id="repeat-ping" placeholder="Porovnejte oba pokusy."></textarea></div>
+            </div>
+            <div class="question-block"><label for="b-ping">Co se změnilo v SAT po pingu B → C?</label><textarea id="b-ping" placeholder="Zapište novou položku a své vysvětlení."></textarea></div>
+            <ul class="task-list">
+              <li class="task-item"><input type="checkbox" id="check-first" data-core><label class="task-copy" for="check-first"><strong>Máme předpověď i pozorování prvního pingu.</strong></label></li>
+              <li class="task-item"><input type="checkbox" id="check-repeat" data-core><label class="task-copy" for="check-repeat"><strong>Zopakovali jsme A → C a vyzkoušeli B → C.</strong><p>Změnu v SAT umíme ukázat v simulaci.</p></label></li>
+            </ul>
+          </div>
+
+          <div class="subsection"><h3>Vysvětlete vlastními slovy</h3>
+            <div class="question-block"><label for="why-devices">Proč jste zvolili právě tato zařízení? Proč mají stanice stejný prefix, ale různé IP adresy?</label><textarea id="why-devices"></textarea></div>
+            <div class="question-block"><label for="learn-c">Z čeho se přepínač naučil MAC adresu C?</label><textarea id="learn-c"></textarea></div>
+            <div class="field-grid"><div class="field"><label for="sat-mapping">SAT: MAC → co?</label><input id="sat-mapping" type="text"></div><div class="field"><label for="arp-mapping">ARP: IP → co?</label><input id="arp-mapping" type="text"></div></div>
+          </div>
+          <div class="bottom-nav"><span class="section-lead">Teď si ve dvojici vyměňte role.</span><button class="button primary" type="button" data-go="2">Druhá místnost <span aria-hidden="true">→</span></button></div>
+        </section>
+
+        <section class="paper-section" id="uloha-2" data-step="2" aria-labelledby="title-2" hidden>
+          <div class="section-heading"><span class="section-number" aria-hidden="true">2</span><h2 class="section-title" id="title-2" tabindex="-1">Druhá místnost</h2><span class="duration">20 minut</span></div>
+          <p class="section-lead">Pracujte dál se svou sítí z první úlohy. Hotové schéma ani projekt nedostáváte.</p>
+          <div class="brief"><p>A a B zůstávají v první místnosti. <strong>C přestěhujte do druhé místnosti</strong> a přidejte tam <strong>D</strong>. Mezi místnostmi lze vést <strong>jediný ethernetový kabel</strong>; uvnitř místností vede kabel od každého počítače k místnímu síťovému prvku.</p><p>Všechny čtyři stanice mají zůstat ve stejné lokální síti <strong>192.168.10.0/24</strong>. Zachovejte adresy A, B a C, adresu D zvolte vy. Použijte co nejméně síťových prvků.</p></div>
+          <h3>Navrhněte úpravu a postavte ji <small>· asi 8 minut</small></h3>
+          <div class="question-block"><label for="topology-2">Co ve svém návrhu změníte a proč?</label><textarea id="topology-2" placeholder="Popište propojení místností a potřebná zařízení."></textarea></div>
+          <p class="section-lead">Doplňte adresu D, masku a rozhodnutí o bráně do <button class="text-button" type="button" data-go="1" data-focus="ip-d">adresního plánu v úloze 1</button>. Při návratu zůstanou všechny vaše odpovědi vyplněné.</p>
+          <ul class="task-list">
+            <li class="task-item"><input type="checkbox" id="check-extend-plan" data-core><label class="task-copy" for="check-extend-plan"><strong>Máme návrh rozšíření a doplněný plán pro D.</strong></label></li>
+            <li class="task-item"><input type="checkbox" id="check-extend-build" data-core><label class="task-copy" for="check-extend-build"><strong>Síť odpovídá zadání a na D máme Command Line.</strong><p>Vlastní upravený projekt uložte ve Filiu.</p></label></li>
+          </ul>
+          <div class="subsection"><h3>Pozorujte <small>· asi 12 minut</small></h3>
+            <p class="section-lead">Přepněte kladívko → zelená šipka. Nejprve předpovězte chování, pak spusťte A → C a B → D příkazem <code>ping</code> s vašimi adresami.</p>
+            <div class="question-block"><label for="prediction-2">Kam se nyní dostane první ARP request z A? Přejde i do druhé místnosti?</label><textarea id="prediction-2" placeholder="Předpověď zdůvodněte před spuštěním pingu."></textarea></div>
+            <div class="question-block"><label for="result-2">Co se při obou pokusech skutečně stalo?</label><textarea id="result-2" placeholder="Výsledek pingu a dosah ARP requestu."></textarea></div>
+            <p class="section-lead">Prohlédněte SAT obou přepínačů. U záznamu MAC adresy každé uvedené stanice opište <strong>skutečný port ze své simulace</strong>.</p>
+            <div class="table-wrap" role="region" aria-label="Porty v SAT obou přepínačů" tabindex="0"><table><caption class="sr-only">Pozorování tabulek přepínačů</caption><thead><tr><th scope="col">Přepínač v místnosti</th><th scope="col">MAC patřící stanici</th><th scope="col">Port podle SAT</th></tr></thead><tbody>
+              <tr><td>první</td><th scope="row">C</th><td><input type="text" aria-label="Port pro MAC stanice C na přepínači v první místnosti"></td></tr>
+              <tr><td>první</td><th scope="row">D</th><td><input type="text" aria-label="Port pro MAC stanice D na přepínači v první místnosti"></td></tr>
+              <tr><td>druhé</td><th scope="row">A</th><td><input type="text" aria-label="Port pro MAC stanice A na přepínači ve druhé místnosti"></td></tr>
+              <tr><td>druhé</td><th scope="row">B</th><td><input type="text" aria-label="Port pro MAC stanice B na přepínači ve druhé místnosti"></td></tr>
+            </tbody></table></div>
+            <ul class="task-list">
+              <li class="task-item"><input type="checkbox" id="check-extend-ping" data-core><label class="task-copy" for="check-extend-ping"><strong>Ověřili jsme A → C i B → D a porovnali předpověď s provozem.</strong></label></li>
+              <li class="task-item"><input type="checkbox" id="check-sat" data-core><label class="task-copy" for="check-sat"><strong>Máme doplněné porty ze SAT obou přepínačů.</strong></label></li>
+            </ul>
+            <div class="question-block"><label for="same-port">Proč se u více MAC adres opakuje stejný port?</label><textarea id="same-port"></textarea></div>
+            <div class="question-block"><label for="same-ip">Proč C po přestěhování nemuselo změnit IP adresu?</label><textarea id="same-ip"></textarea></div>
+            <details class="help"><summary>Nápověda: opakování pokusu a čtení SAT</summary><div class="help-content"><p>Pro nový pokus přepněte kladívko → zelená šipka. Na A otevřete Show data exchange a Command Line. Po obou pingech otevřete zvlášť SAT každého přepínače. MAC adresy stanic si ověřte v jejich konfiguraci nebo v zachycených zprávách.</p></div></details>
+          </div>
+          <div class="network-context"><p><strong>Na závěr základních úloh:</strong> ukažte vlastní síť, adresní plán a odpovědi k pozorování. Samotné blikání kabelů nestačí.</p><p>Rozlišujte dva případy: ARP request je broadcast. Unknown unicast je rámec s konkrétní cílovou MAC, pro kterou přepínač nemá záznam v SAT.</p></div>
+          <div id="completionMessage" role="status" hidden>Všech 9 kroků základu máte označeno. Zkontrolujte ještě vlastní vysvětlení a připravte se ukázat, z jakého pozorování vychází.</div>
+          <div class="bottom-nav"><button class="button secondary" type="button" data-go="1"><span aria-hidden="true">←</span> Malá laboratoř</button><button class="button primary" type="button" data-go="3">Router · bonus <span aria-hidden="true">→</span></button></div>
+        </section>
+
+        <section class="paper-section" id="uloha-3" data-step="3" aria-labelledby="title-3" hidden>
+          <span class="bonus-label">Volitelné pro rychlejší dvojice</span>
+          <div class="section-heading"><span class="section-number" aria-hidden="true">3</span><h2 class="section-title" id="title-3" tabindex="-1">Oddělte místnosti routerem</h2><span class="duration">bonus · 5–8 minut</span></div>
+          <p class="section-lead">Nejdříve dokončete a vysvětlete základní úlohy. Tento pokus přidává směrování mezi dvěma sítěmi.</p>
+          <div class="brief"><p>Každá místnost má tvořit <strong>jinou lokální i IP síť</strong>, ale A musí dál dosáhnout na C. Komunikace mezi místnostmi smí procházet <strong>pouze routerem</strong>.</p><p>První místnost ponechte v <strong>192.168.10.0/24</strong>, druhou změňte na <strong>192.168.20.0/24</strong>. Router má v každé síti adresu <strong>.1</strong>. Navrhněte propojení, nastavte obě jeho rozhraní, upravte adresy C/D a výchozí brány všech stanic. Maska je všude /24.</p></div>
+          <div class="notice"><span class="notice-icon" aria-hidden="true">ⓘ</span><p>Pokud A nebo B používá 192.168.10.1, přidělte mu jinou volnou IP adresu.</p></div>
+          <div class="question-block"><label for="topology-3">Jak upravíte propojení mezi místnostmi?</label><textarea id="topology-3" placeholder="Navrhněte cestu mezi oběma sítěmi."></textarea></div>
+          <h3>Adresní plán po změně</h3>
+          <div class="table-wrap" role="region" aria-label="Adresní plán pro dvě sítě" tabindex="0"><table><caption class="sr-only">Nové nastavení stanic a routeru v bonusu</caption><thead><tr><th scope="col">Zařízení / rozhraní</th><th scope="col">IP adresa</th><th scope="col">Maska</th><th scope="col">Brána stanice</th></tr></thead><tbody>
+            <tr><th scope="row">A</th><td><input type="text" aria-label="Bonus: IP A" spellcheck="false"></td><td><input type="text" aria-label="Bonus: maska A" spellcheck="false"></td><td><input type="text" aria-label="Bonus: brána A" spellcheck="false"></td></tr>
+            <tr><th scope="row">B</th><td><input type="text" aria-label="Bonus: IP B" spellcheck="false"></td><td><input type="text" aria-label="Bonus: maska B" spellcheck="false"></td><td><input type="text" aria-label="Bonus: brána B" spellcheck="false"></td></tr>
+            <tr><th scope="row">C</th><td><input type="text" aria-label="Bonus: IP C" spellcheck="false"></td><td><input type="text" aria-label="Bonus: maska C" spellcheck="false"></td><td><input type="text" aria-label="Bonus: brána C" spellcheck="false"></td></tr>
+            <tr><th scope="row">D</th><td><input type="text" aria-label="Bonus: IP D" spellcheck="false"></td><td><input type="text" aria-label="Bonus: maska D" spellcheck="false"></td><td><input type="text" aria-label="Bonus: brána D" spellcheck="false"></td></tr>
+            <tr><th scope="row">Router · místnost 1</th><td><input type="text" aria-label="IP routeru v první místnosti" spellcheck="false"></td><td><input type="text" aria-label="Maska routeru v první místnosti" spellcheck="false"></td><td aria-label="Brána stanice se na tomto řádku nevyplňuje">—</td></tr>
+            <tr><th scope="row">Router · místnost 2</th><td><input type="text" aria-label="IP routeru ve druhé místnosti" spellcheck="false"></td><td><input type="text" aria-label="Maska routeru ve druhé místnosti" spellcheck="false"></td><td aria-label="Brána stanice se na tomto řádku nevyplňuje">—</td></tr>
+          </tbody></table></div>
+          <ul class="task-list"><li class="task-item"><input type="checkbox" id="check-router-build"><label class="task-copy" for="check-router-build"><strong>Propojení i adresy odpovídají novému zadání.</strong><p>Ve Filiu uložte také svou variantu s routerem.</p></label></li></ul>
+          <div class="subsection"><h3>Ověřte A → C a sledujte adresy</h3><p class="section-lead">Spusťte ping A → C. V provozu na A i C porovnejte <strong>stejný směr: ICMP request</strong>. MAC hledejte v části <strong>Network</strong>, IP v části <strong>Internet</strong>.</p>
+            <div class="observation-grid"><div class="question-block"><label for="mac-before">Komu patří cílová MAC před routerem?</label><textarea id="mac-before" placeholder="Zapište adresu i jejího vlastníka."></textarea></div><div class="question-block"><label for="mac-after">Komu patří cílová MAC za routerem?</label><textarea id="mac-after" placeholder="Zapište adresu i jejího vlastníka."></textarea></div></div>
+            <div class="question-block"><label for="ip-same">Které dvě IP adresy zůstaly stejné? Co z toho vyvozujete?</label><textarea id="ip-same"></textarea></div>
+            <ul class="task-list"><li class="task-item"><input type="checkbox" id="check-router-observe"><label class="task-copy" for="check-router-observe"><strong>Ping funguje a porovnali jsme MAC i IP na obou stranách routeru.</strong></label></li></ul>
+          </div>
+          <div class="bottom-nav"><button class="button secondary" type="button" data-go="2"><span aria-hidden="true">←</span> Druhá místnost</button><span class="section-lead">Své závěry doložte provozem.</span></div>
+        </section>
+      </form>
+      <footer class="page-footer"><p id="stepIndicator">Úloha 1 ze 3</p><p><span data-progress-text>0 z 9 kroků základu</span> · bez ukládání odpovědí</p></footer>
+      <div class="sr-only" id="progressAnnouncement" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+</body>
+</html>
